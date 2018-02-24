@@ -31,8 +31,10 @@ echo "Uncommited changes have been moved to changes.log"
 
 
 #Question 3
+# Takes all files with #TODO in them and puts them in TODO.log
 grep "#TODO" -r --exclude=ProjectAnalyze.sh --exclude=changes.log --exclude=TODO.log  > TODO.log
 
+#Quesiton  4
 
 
 
@@ -40,6 +42,17 @@ grep "#TODO" -r --exclude=ProjectAnalyze.sh --exclude=changes.log --exclude=TODO
 
 
 
+#Quick Search
+#Given file name or key words of a file name will search and fill all matches
+
+echo " Would you like to search for a file? [Y/N]"
+read input1
+if [ $input1 == "N" ]
+echo " Ok, no file will be searched for"
+elif [ $input1 == "Y" ]
+then echo " Do you know full file name? [Y/N]"
+read input2
+if [ $input2 == "Y" ] 
 
 
 
