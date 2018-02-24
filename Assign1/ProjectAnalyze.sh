@@ -31,7 +31,7 @@ echo "Uncommited changes have been moved to changes.log"
 
 
 #Question 3
-grep -r "#TODO"  > TODO.log
+grep "#TODO" -r --exclude=ProjectAnalyze.sh --exclude=changes.log --exclude=TODO.log  > TODO.log
 
 
 
