@@ -33,32 +33,44 @@ echo "Uncommited changes have been moved to changes.log"
 #Question 3
 # Takes all files with #TODO in them and puts them in TODO.log
 grep "#TODO" -r --exclude=ProjectAnalyze.sh --exclude=changes.log --exclude=TODO.log  > TODO.log
+echo "All work TODO has been put into TODO.log"
 
 #Quesiton  4
-
-
+#Checks all Haskell files with errors and puts them into error.log
+if [ $(find -name "*.hs" | wc -l) ] 
+then ( find -name ".hs" | xargs ghc -fno-code) >> error.log
+echo "error.log has been created"
+else echo "There are no Haskell files"
+fi
 
 
 
 
 
 #Quick Search
-#Given file name or key words of a file name will search and fill all matches
+#Given file/Diretory name or key words of one will search and fill all matches
 
-echo " Would you like to search for a file? [Y/N]"
+echo " Would you like to search for a file/Directory? [Y/N]"
 read input1
+
 if [ $input1 == "N" ]
-echo " Ok, no file will be searched for"
-elif [ $input1 == "Y" ]
-then echo " Do you know full file name? [Y/N]"
-read input2
-if [ $input2 == "Y" ] 
+	then echo " Ok, no search will be made"
+	else echo "Do you remember the exact name of the file? [Y/N]"
+        read input2
+		if [ $input2 == "Y" ]
+		then echo "Enter file name"
+		read input3
+		find -iname "$input3"
+		echo "Here are the matching files/directories"
 
-
-
-
-
-
+		else echo "Type any words you remember from the file/directory name"
+		read input4
+		find -iname "*$input4*"
+		echo "Here are the matching files/directories" 
+		fi
+fi
+ 
+#Bonus Feature 2"   			
 #Given a Directory name will add,commit and push to GitHub with a README file that has the date
 echo "What is the name of the directory you would like to create"
 read name
