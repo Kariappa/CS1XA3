@@ -19,3 +19,16 @@ elif [ $input == "N" ]
 then  echo "Your respository has not been updated"
 fi
 fi
+
+
+
+
+#Question 2
+#Puts uncommited changes in a file changes.log
+git diff > changes.log
+echo "Uncommited changes have been moved to changes.log"
+
+
+
+#Question 3
+#
