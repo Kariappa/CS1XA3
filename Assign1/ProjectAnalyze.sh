@@ -37,16 +37,16 @@ echo "All work TODO has been put into TODO.log"
 
 #Quesiton  4
 #Checks all Haskell files with errors and puts them into error.log
-if [ $(find -name "*.hs" | wc -l) ] 
-then ( find -name ".hs" | xargs ghc -fno-code) >> error.log
+if [ "$(find -name "*.hs" | wc -l)" -gt 0 ] 
+then find -name "*.hs" |xargs ghc -fno-code >> error.log 2>&1
 echo "error.log has been created"
-else echo "There are no Haskell files"
+else echo "There are no Haskell files" 
 fi
 
 
 
 
-
+#Bonus Feature 1
 #Quick Search
 #Given file/Diretory name or key words of one will search and fill all matches
 
@@ -58,7 +58,7 @@ if [ $input1 == "N" ]
 	else echo "Do you remember the exact name of the file? [Y/N]"
         read input2
 		if [ $input2 == "Y" ]
-		then echo "Enter file name"
+		then echo "Enter file/directory name"
 		read input3
 		find -iname "$input3"
 		echo "Here are the matching files/directories"
