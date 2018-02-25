@@ -1,0 +1,15 @@
+diff --git a/Assign1/Ali/README b/Assign1/Ali/README
+index 09b6c32..4e42537 100644
+--- a/Assign1/Ali/README
++++ b/Assign1/Ali/README
+@@ -1 +1,2 @@
+ This file was created on 2018-02-24
++#TODO
+diff --git a/README.md b/README.md
+deleted file mode 100644
+index af7ae88..0000000
+--- a/README.md
++++ /dev/null
+@@ -1 +0,0 @@
+-# CS1XA3
+\ No newline at end of file
