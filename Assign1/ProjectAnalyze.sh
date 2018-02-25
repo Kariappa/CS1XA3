@@ -72,7 +72,11 @@ fi
  
 #Bonus Feature 2"   			
 #Given a Directory name will add,commit and push to GitHub with a README file that has the date
-echo "What is the name of the directory you would like to create"
+echo "Would you like to create a dictionary? [Y/N]"
+read answer
+if [ $answer == "N" ] 
+then echo "Ok no directory will be created"
+else echo "What is the name of the directory you would like to create"
 read name
 mkdir $name
 touch $name/README 
@@ -83,7 +87,7 @@ git add $name
 git commit "$name" -m "Created $name"
 git push
 echo "$name has now been pushed"
-
+fi 
 
 
 
