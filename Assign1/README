@@ -1,0 +1,31 @@
+Question 1 :
+The script first brings the remote refs up to date but doesn’t make any changes. Then using git status finds if the local repo up 
+to date. Using grep it checks for the words “up-to-date” if there is a match it tells the user their repository is up to date. If 
+not, it informs the user their local is not up to date and asks if they would like to update it, if so it performs a git pull.
+
+Question 2 : 
+The script uses git diff to find any uncommitted changes, and puts them into a file called changes.log. If the file already doesn’t 
+exist, it will create it. It then informs the user changes.log has been created.
+
+Question 3:
+The script searches every file and sees if it has a line that has #TODO in it. It then takes the line and puts it into a file called 
+TODO.log. After testing the script I saw that it was also including the script itself and info from other files the script has made. 
+In order to prevent this I used “--exclude=” , to exclude such files.
+Exclude syntax found on https://stackoverflow.com/questions/221921/use-grep-exclude-include-syntax-to-not-grep-through-certain-files).
+
+Question 4 :
+The script first searches for any Haskell files by using grep to search for any files ending with “.hs”. For any Haskell files 
+found it uses the given command “  ghc -fno-code” to check for any syntax errors and puts the results into a file called error.log.
+I used 2>&1 to send both standard input and standard error into the file.
+
+Added Feature 1 : Quick Search
+I added one feature that when given a file name or directory name will find the path to where it is located in case the user ever
+forgets where they put something. Also just in case the user doesn’t fully remember the name it will take any keywords the user can 
+remember from the name and search all given matches. This part is done by taking the user input and placing it between two “*” operators. 
+
+Added Feature 2: Creating and Pushing a Directory
+This feature was added to quickly create and push a directory. Instead of having to put a file inside a directory to push it to git hub, 
+the script will ask for the name of a directory the user wants. It then creates the directory with a README file containing the date of
+when it was created. It git adds, commits, and pushes the directory with the user only having to enter their github info. I thought 
+this would useful since at the start of the course we had to make directories for our labs such as “Bash1,Elm1..” but now we need to 
+change the names to “Bash01,Elm01.” 
