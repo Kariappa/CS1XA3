@@ -72,7 +72,7 @@ fi
  
 #Bonus Feature 2"   			
 #Given a Directory name will add,commit and push to GitHub with a README file that has the date
-echo "Would you like to create a dictionary? [Y/N]"
+echo "Would you like to create a directory? [Y/N]"
 read answer
 if [ $answer == "N" ] 
 then echo "Ok no directory will be created"
