@@ -70,7 +70,7 @@ if [ $input1 == "N" ]
 		fi
 fi
  
-#Bonus Feature 2"   			
+#Bonus Feature 2   			
 #Given a Directory name will add,commit and push to GitHub with a README file that has the date
 echo "Would you like to create a directory? [Y/N]"
 read answer
@@ -88,6 +88,19 @@ git commit "$name" -m "Created $name"
 git push
 echo "$name has now been pushed"
 fi 
+
+#Bonus Feature 3
+#Tells you your top 10 used commands and how many times you have used them
+echo "Would you like to see your top 10 commands used and how many times you have used them? [Y/N]"
+read decision
+
+if [ $decision == "Y" ]
+then awk '{print $1}' ~/.bash_history | sort | uniq -c | sort -nr | head -10
+echo "These are your top 10 used bash commands"
+
+elif [ $decision == "N" ]
+then  echo "Ok I wont show you, but I think it would be interesting"
+fi
 
 
 
