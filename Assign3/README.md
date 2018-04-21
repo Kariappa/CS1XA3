@@ -3,7 +3,7 @@
 A Math Library made with Haskell that includes parsing, evaluating,simplyfying as well as finding partial and anti derivatives of expressions
 
 ## Documentation
-Haddock file can be found in https://github.com/Kariappa/CS1XA3/tree/master/Assign3/Completed%20Haskell%20Math%20Library/docs
+Documentation can be found on https://kariappa.github.io/CS1XA3/ (Not all of the parsers documentation is appearing)
 
 
 ## Citation:
